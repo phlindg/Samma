@@ -37,7 +37,7 @@ class Factor:
         self.prices[s].append(mid)
         if self.bar_index[s] > 15:
             facts = self.get_factors(self.prices[s])
-            print(facts)
+            #print(facts)
             rsi = facts["RSI"].iloc[-1]
             momentum = facts["Momentum"]
             if rsi < 50 and momentum > 0 and self.invested[s] == False:

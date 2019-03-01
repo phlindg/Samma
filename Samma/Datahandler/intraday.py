@@ -7,7 +7,7 @@ import pandas as pd
 from events import MarketEvent, TickEvent
 
 
-class NasdaqCSV:
+class Intraday:
     def __init__(self, csv_dir, symbol_list, events,start_date,train_date, end_date):
         self.csv_dir = csv_dir
         self.symbol_list = symbol_list
@@ -18,7 +18,7 @@ class NasdaqCSV:
 
         self.events = events
 
-
+        
         self.symbol_data = {}
         self.latest_symbol_data = {}
         self.training_data = {}

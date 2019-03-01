@@ -2,7 +2,7 @@ import queue
 
 from Datahandler import NasdaqCSV
 from Backtest import Backtest
-from Strategies import BuyHold, TS, Tripple, Double, Factor
+from Strategies import BuyHold, Tripple, Double, Factor
 from Portfolio import BTPortfolio
 from Riskhandler import BasicRisk
 from Execution import BTExe
@@ -11,9 +11,9 @@ from recorder import Recorder
 
 
 
-csv_dir = "C:/Users/Phili/Desktop/fond/data/"
-symbol_list = ["SAND", "ERIC", "SSAB", "VOLV", "HM"]
-start_date = "2010-01-03"
+csv_dir = "D:/fonden/Data"
+symbol_list = ["SAND", "ERIC",  "VOLV"]
+start_date = "2017-01-03"
 train_date = "2005-01-01"
 end_date = "2019-01-03"
 initial_capital = 10000
@@ -37,7 +37,7 @@ def backtest():
 
 def opti():
     from scipy.optimize import minimize, brute
-    strat = Double
+    strat = BuyHold
     bt = Backtest(csv_dir, symbol_list, start_date,train_date,end_date, initial_capital,
                 events, bars, strat, port, risk, exe, stats)
     x0 = [50,2]
